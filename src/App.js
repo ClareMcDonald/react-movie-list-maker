@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import './App.css';
+import MovieForm from './MovieForm';
+import MovieList from './MovieList';
+import Movie from './Movie';
 
 function App() {
   const [allMovies, setAllMovies] = useState([]);
@@ -8,7 +11,7 @@ function App() {
   const [movieFormDirector, setMovieFormDirector] = useState('');
   const [movieTitle, setMovieTitle] = useState('');
   const [movieFormColor, setMovieFormColor] = useState();
-  
+
   return (
     <div className="App">
    
