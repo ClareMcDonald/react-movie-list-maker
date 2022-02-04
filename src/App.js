@@ -11,7 +11,7 @@ function App() {
   const [movieFormYearReleased, setMovieFormYearReleased] = useState();
   const [movieFormDirector, setMovieFormDirector] = useState('');
   const [movieTitle, setMovieTitle] = useState('');
-  const [movieFormColor, setMovieFormColor] = useState();
+  const [movieFormColor, setMovieFormColor] = useState('Green');
 
   function submitMovie(e) {
     e.preventDefault();
@@ -30,6 +30,14 @@ function App() {
     setMovieFormDirector('');
     setMovieFormYearReleased();
     setMovieFormColor();
+  }
+
+  function handleDeleteMovie(id) {
+    const index = allMovies.findIndex(movie => movie.id === id);
+
+    allMovies.splice(index, 1);
+
+    setAllMovies([...allMovies]);
   }
 
   return (
@@ -51,7 +59,7 @@ function App() {
         movieFormColor={movieFormColor}
         setMovieFormColor={setMovieFormColor}
       />
-      <MovieList allMovies={allMovies}/>
+      <MovieList allMovies={allMovies} handleDeleteMovie={handleDeleteMovie}/>
     </div>
   );
 }
