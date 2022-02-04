@@ -42,7 +42,7 @@ function App() {
 
   function handleFilterMovies(search) {
     if (search) {
-      const filteredMovies = allMovies.filter(movie => movie.name.includes(search));
+      const filteredMovies = allMovies.filter(movie => movie.title.includes(search));
 
       setFilteredMovies(filteredMovies);
     } else {
@@ -73,7 +73,12 @@ function App() {
         movieFormColor={movieFormColor}
         setMovieFormColor={setMovieFormColor}
       />
-      <MovieList allMovies={allMovies} handleDeleteMovie={handleDeleteMovie}/>
+      <MovieList
+        allMovies={filteredMovies.length
+          ? filteredMovies
+          : allMovies
+        }
+        handleDeleteMovie={handleDeleteMovie} />
     </div>
   );
 }
