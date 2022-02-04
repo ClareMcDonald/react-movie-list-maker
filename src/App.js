@@ -52,33 +52,42 @@ function App() {
 
   return (
     <div className="App">
-      <Movie movie={{
-        title: movieTitle,
-        director: movieFormDirector,
-        year: movieFormYearReleased,
-        color: movieFormColor
-      }} />
+
+      <div className="current-movie">
+        <h3>Add a Movie</h3>
+        <Movie movie={{
+          title: movieTitle,
+          director: movieFormDirector,
+          year: movieFormYearReleased,
+          color: movieFormColor
+        }} />
+      </div>
+      <div className="movie-form">
+        <MovieForm
+          submitMovie={submitMovie}
+          movieTitle={movieTitle}
+          setMovieTitle={setMovieTitle}
+          movieFormYearReleased={movieFormYearReleased}
+          setMovieFormYearReleased={setMovieFormYearReleased}
+          movieFormDirector={movieFormDirector}
+          setMovieFormDirector={setMovieFormDirector}
+          movieFormColor={movieFormColor}
+          setMovieFormColor={setMovieFormColor}
+        />
+      </div>
       <div className="filter-movies">
-        Filter Movies
+        <h3>Filter Movies</h3>
         <input onChange={(e) => handleFilterMovies(e.target.value)} />
       </div>
-      <MovieForm
-        submitMovie={submitMovie}
-        movieTitle={movieTitle}
-        setMovieTitle={setMovieTitle}
-        movieFormYearReleased={movieFormYearReleased}
-        setMovieFormYearReleased={setMovieFormYearReleased}
-        movieFormDirector={movieFormDirector}
-        setMovieFormDirector={setMovieFormDirector}
-        movieFormColor={movieFormColor}
-        setMovieFormColor={setMovieFormColor}
-      />
-      <MovieList
-        allMovies={filteredMovies.length
-          ? filteredMovies
-          : allMovies
-        }
-        handleDeleteMovie={handleDeleteMovie} />
+      <div className="movie-list">
+        <h3>Movies</h3>
+        <MovieList
+          allMovies={filteredMovies.length
+            ? filteredMovies
+            : allMovies
+          }
+          handleDeleteMovie={handleDeleteMovie} />
+      </div>
     </div>
   );
 }

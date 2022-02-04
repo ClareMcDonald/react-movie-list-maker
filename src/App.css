@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+
 }
 
 .App-logo {
@@ -36,3 +37,31 @@
     transform: rotate(360deg);
   }
 }
+
+.current-movie {
+  border: 4px solid rgb(89, 149, 199);
+  padding: 20px;
+  margin: 10px;
+}
+
+form label {
+  display: block;
+  margin: 10px;
+}
+
+.movie-form {
+  background-color: aliceblue;
+  margin: 10px;
+} 
+
+.filter-movies {
+  background-color: rgb(129, 212, 212);
+  padding: 10px;
+  margin: 10px;
+}
+
+.movie-list {
+  background-color: cornflowerblue;
+  padding: 20px;
+  margin: 10px;
+} 
