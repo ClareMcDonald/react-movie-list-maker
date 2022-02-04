@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function Movie({ movie }) {
-  return <div>
+  return <div style={{ backgroundColor: movie.color }}>
     <div>{movie.title}</div>
     <p>{movie.year}</p>
     <p>{movie.director}</p>
