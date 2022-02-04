@@ -51,6 +51,7 @@ function App() {
         movieFormColor={movieFormColor}
         setMovieFormColor={setMovieFormColor}
       />
+      <MovieList allMovies={allMovies}/>
     </div>
   );
 }
