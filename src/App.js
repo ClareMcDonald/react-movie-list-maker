@@ -40,6 +40,16 @@ function App() {
     setAllMovies([...allMovies]);
   }
 
+  function handleFilterMovies(search) {
+    if (search) {
+      const filteredMovies = allMovies.filter(movie => movie.name.includes(search));
+
+      setFilteredMovies(filteredMovies);
+    } else {
+      setFilteredMovies(allMovies);
+    }
+  }
+
   return (
     <div className="App">
       <Movie movie={{
@@ -48,6 +58,10 @@ function App() {
         year: movieFormYearReleased,
         color: movieFormColor
       }} />
+      <div className="filter-movies">
+        Filter Movies
+        <input onChange={(e) => handleFilterMovies(e.target.value)} />
+      </div>
       <MovieForm
         submitMovie={submitMovie}
         movieTitle={movieTitle}
