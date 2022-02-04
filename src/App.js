@@ -17,6 +17,7 @@ function App() {
     e.preventDefault();
     
     const newMovie = {
+      id: Math.ceil(Math.random() * 999999),
       title: movieTitle,
       director: movieFormDirector,
       year: movieFormYearReleased,
@@ -47,8 +48,9 @@ function App() {
         setMovieFormYearReleased={setMovieFormYearReleased}
         movieFormDirector={movieFormDirector}
         setMovieFormDirector={setMovieFormDirector}
-        movieFormColor={movieFormColor} />
+        movieFormColor={movieFormColor}
         setMovieFormColor={setMovieFormColor}
+      />
     </div>
   );
 }
