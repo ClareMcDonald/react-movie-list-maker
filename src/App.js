@@ -5,13 +5,20 @@ import MovieList from './MovieList';
 import Movie from './Movie';
 
 
-function App() {
-  const [allMovies, setAllMovies] = useState([]);
-  const [filteredMovies, setFilteredMovies] = useState([]);
-  const [movieFormYearReleased, setMovieFormYearReleased] = useState();
-  const [movieFormDirector, setMovieFormDirector] = useState('');
-  const [movieTitle, setMovieTitle] = useState('');
-  const [movieFormColor, setMovieFormColor] = useState('Green');
+export default class App extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+
+      allMovies: [],
+      filteredMovies: [],
+      movieFormYearReleased: '',
+      movieFormDirector: '',
+      movieTitle: '',
+      movieFormColor: ''
+    };
+  }
 
   function submitMovie(e) {
     e.preventDefault();
@@ -24,12 +31,12 @@ function App() {
       color: movieFormColor
     };
   
-    setAllMovies([...allMovies, newMovie]);
+    this.setState([...allMovies, newMovie]);
   
-    setMovieTitle('');
-    setMovieFormDirector('');
-    setMovieFormYearReleased();
-    setMovieFormColor();
+    this.setState(movieTitle: '');
+    this.setState(movieFormDirector: '');
+    this.setState(movieFormYearReleased: '';
+    this.setState(movieFormColor: '');
   }
 
   function handleDeleteMovie(id) {
@@ -50,6 +57,7 @@ function App() {
     }
   }
 
+  render () {
   return (
     <div className="App">
 
@@ -90,6 +98,6 @@ function App() {
       </div>
     </div>
   );
-}
-
+  }
+} 
 export default App;
